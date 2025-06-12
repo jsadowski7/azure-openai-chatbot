@@ -1,0 +1,19 @@
+{
+  "name": "azure-openai-chatbot",
+  "version": "1.0.0",
+  "main": "bin/sample.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node bin/sample.js"
+  },
+  "dependencies": {
+    "@azure/identity": "latest",
+    "dotenv": "^16.5.0",
+    "openai": "latest",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
