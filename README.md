@@ -20,5 +20,5 @@ This is a TypeScript + JavaScript chatbot application built in Visual Studio Cod
 1. **Clone the repository**
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo
-  ```
+   cd your-repo ```
+
