@@ -30,5 +30,11 @@ AZURE_OPENAI_DEPLOYMENT=your-deployment-name
 AZURE_OPENAI_API_VERSION=2024-10-21
 AZURE_TENANT_ID=your-tenant-id
 AZURE_CLIENT_ID=your-client-id
-AZURE_CLIENT_SECRET=your-client-secret ```
+AZURE_CLIENT_SECRET=your-client-secret
+```
 
+4. **Run the Build**
+   ``` npx tsc ```
+
+5. **Run the App**
+   ``` npm start ```
