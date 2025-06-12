@@ -38,3 +38,13 @@ AZURE_CLIENT_SECRET=your-client-secret
 
 5. **Run the App**
    ``` npm start ```
+
+## Authentication with Entra ID
+
+- This app uses the ```@azure/identity``` package with ```DefaultAzureCredential``` to authenticate users via Microsoft Entra ID. Make sure your app is registered in Entra ID and has the correct API permissions.
+
+## Usage 
+- Once the app is running, users can interact with the chatbot through the frontend interface. Authentication is handled automatically via Entra ID.
+
+## License 
+- This project is licensed under the MIT license.
