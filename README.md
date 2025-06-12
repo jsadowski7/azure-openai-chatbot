@@ -19,5 +19,14 @@ This is a TypeScript + JavaScript chatbot application built in Visual Studio Cod
 ## Setup Instructions
 1. **Clone the repository**
    ``` git clone https://github.com/your-username/your-repo-name.git ```
-   ``` cd your-repo ```
+2. **Install Dependencies**
+   ``` npm install ```
+3. **Create .env file **
+ ```   
+ AZURE_OPENAI_ENDPOINT=your-endpoint
+AZURE_OPENAI_DEPLOYMENT=your-deployment-name
+AZURE_OPENAI_API_VERSION=2024-10-21
+AZURE_TENANT_ID=your-tenant-id
+AZURE_CLIENT_ID=your-client-id
+AZURE_CLIENT_SECRET=your-client-secret ```
 
