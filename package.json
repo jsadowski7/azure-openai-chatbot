@@ -10,10 +10,18 @@
     "@azure/identity": "latest",
     "dotenv": "^16.5.0",
     "openai": "latest",
-    "winston": "^3.17.0"
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@eslint/js": "^9.28.0",
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "@types/sqlite3": "^3.1.11",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.34.0"
   }
 }
