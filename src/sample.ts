@@ -2,7 +2,7 @@ import * as readline from "node:readline";
 import { AzureOpenAI } from "openai";
 import { DefaultAzureCredential, getBearerTokenProvider } from "@azure/identity";
 import dotenv from "dotenv";
-
+import { chatHistory } from "./chatHistory"; // Import chat history management
 // Load environment variables from .env file
 dotenv.config();
 
@@ -20,10 +20,6 @@ const rl = readline.createInterface({ // Use readline to handle user input
   prompt: "Ask the chatbot (type 'exit' to quit): " // Prompt for user input
 });
 
-// Initialize chat history with a system message
-const chatHistory: { role: "system" | "user" | "assistant"; content: string }[] = [
-  { role: "system", content: "You are a helpful assistant." }
-];
 
 async function main() { // Main function to run the chatbot
   const credential = new DefaultAzureCredential(); 
@@ -33,16 +29,16 @@ async function main() { // Main function to run the chatbot
 
   rl.prompt(); // Display the prompt for user input
 
-  rl.on("line", async (userInput) => {
+  rl.on("line", async (userInput) => { 
     if (userInput.trim().toLowerCase() === "exit") {
       rl.close();
       return;
     }
 
-    chatHistory.push({ role: "user", content: userInput });
+    chatHistory.push({ role: "user", content: userInput }); // Add user input to chat history
 
     try {
-      const response = await client.chat.completions.create({
+      const response = await client.chat.completions.create({ // Create a chat completion request
         messages: chatHistory,
         max_tokens: 4096,
         temperature: 1,
@@ -50,9 +46,9 @@ async function main() { // Main function to run the chatbot
         model: modelName
       });
 
-      const reply = response.choices[0].message.content;
+      const reply = response.choices[0].message.content; // Get the reply from the response
       console.log("\nChatbot:", reply);
-      chatHistory.push({ role: "assistant", content: reply ?? "" });
+      chatHistory.push({ role: "assistant", content: reply ?? "" }); // Add the assistant's reply to chat history
     } catch (err) {
       console.error("The sample encountered an error:", err);
     }
